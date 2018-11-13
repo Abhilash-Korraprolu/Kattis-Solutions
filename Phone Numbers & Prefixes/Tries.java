@@ -20,7 +20,7 @@ public class Tries
     }
 
     public void insert(String word) {
-              
+
         TrieNode current = root;
 
         for (int i = 0; i < word.length(); i++) {
@@ -73,7 +73,6 @@ public class Tries
 
         //Input 1: taking in number of test cases
         testCases_total = Integer.parseInt(br.readLine());
-
 
         for(int b = 0; b < testCases_total; b++)
         {
