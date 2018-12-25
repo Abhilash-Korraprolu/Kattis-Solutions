@@ -23,7 +23,7 @@ public class AnagramCounting
 
     private static BigInteger denominatorProduct()
     {
-        // Calculate each char and their repetition values in a hashmap.
+        // Put each char and its repetition values into a hashmap.
         HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
 
         for (int i = 0; i < STRinput.length(); i++)
@@ -40,12 +40,12 @@ public class AnagramCounting
             }
         }
 
-        //Ones the char repetitions are calculated, store the values.
+        //Once the char repetitions are calculated, store the repetition values.
         ArrayList<Integer> repetitions = new ArrayList<Integer>(hm.values());
 
         BigInteger multOfReps = new BigInteger("1");
 
-        //Factorial each value and sum it all!
+        //Find the factorial of each value and multiply it all!
         for (int i = 0; i < repetitions.size(); i++)
         {
             if (repetitions.get(i) != 1)
