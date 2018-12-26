@@ -11,7 +11,7 @@ public class Rig
         int noOfItems, X;
         int[] itemPrices;
 
-        // Input: Line 1
+        // 1st line of INPUT
         String[] ip1 = br.readLine().split(" ");
         noOfItems =  Integer.parseInt(ip1[0]);
         X = Integer.parseInt(ip1[1]);
@@ -22,9 +22,8 @@ public class Rig
             System.exit(0);
         }
 
-        // Input: Line 2
+        // 2nd line of INPUT
         String[] ip2 = br.readLine().split(" ");
-
         itemPrices = new int[noOfItems];
 
         for (int i = 0; i < noOfItems; i++)
