@@ -13,9 +13,7 @@ int main() {
     
     sort(itemPrices, itemPrices + noOfItems);
     for (long i = 1; i < noOfItems; i++) {
-        
         if (itemPrices[i] + itemPrices[i - 1] > X) {
-            
             cout << i;
             return 0;
         }
