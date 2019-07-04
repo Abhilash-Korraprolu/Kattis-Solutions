@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Rig {
     public static void main(String args[]) throws IOException {
-        
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int noOfItems, X;
         int[] itemPrices;
