@@ -1,102 +1,62 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddingWords
-{
-    private static HashMap<String,Integer> hm = new HashMap<String,Integer>();
+public class AddingWords {
 
-    private static String STRip;
-    private static String[] input;
+    public static void main(String args[]) throws IOException {
 
-    ////////////////////////////////
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    private static void calc()
-    {
-      try
-      {
-        //Initialising with the first number.
-        int result = hm.get(input[1]);
+        HashMap<String, Integer> hm = new HashMap<>();
+        String command;
 
-        for(int i = 2; i < input.length; i +=2)
-        {
-          String op = input[i];
-          {
-            switch(op)
-            {
-              case "+":
-                  // result = result + (i+1)
-                  result += hm.get(input[i+1]);
-                  break;
+        while ((command = br.readLine()) != null) {
+            String[] cmdArray = command.split(" ");
 
-              case "-":
-                  result -= hm.get(input[i+1]);
-                  break;
+            if (cmdArray[0].equals("def"))
+                hm.put(cmdArray[1], Integer.parseInt(cmdArray[2]));
 
-              case "=":
-                  String STRresult = null;
-                  for(Map.Entry<String, Integer> entry : hm.entrySet())
-                  {
-                    if(entry.getValue()  == result)
-                    {
-                      STRresult = entry.getKey();
-                      break;
+            else if (cmdArray[0].equals("clear"))
+                hm.clear();
+
+            else {
+                bw.write(command.substring(5) + " ");
+                int result = 0, i = 1;
+
+                while (true) {
+                    if (!hm.containsKey(cmdArray[i])) {
+                        bw.write("unknown\n");
+                        break;
                     }
-                  }
-                  
-                  if(STRresult.equals(null))
-                  {
-                    throw new NullPointerException();
-                  }
-                  else
-                  {
-                    System.out.println(STRip.substring(5)+" "+STRresult);
-                    break;
-                  }
+
+                    if (cmdArray[i - 1].equals("calc"))
+                        result += hm.get(cmdArray[i]);
+
+                    else if (cmdArray[i - 1].equals("+"))
+                        result += hm.get(cmdArray[i]);
+
+                    else if (cmdArray[i - 1].equals("-"))
+                        result -= hm.get(cmdArray[i]);
+
+                    if (i == cmdArray.length - 2) {
+                        if (hm.containsValue(result)) {
+                            
+                            for (Map.Entry<String, Integer> e : hm.entrySet()) {
+                                if (e.getValue() == result)
+                                    bw.write(e.getKey() + "\n");
+                            }
+                        } else
+                            bw.write("unknown\n");
+
+                        break;
+                    }
+                    i = i + 2;
+                }
             }
-          }
         }
-      }
-      catch(NullPointerException e)
-      {
-        System.out.println(STRip.substring(5) + " unknown");
-      }
-  }
-
-  public static void main(String[] args)
-  {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-    try
-    {
-      while ((STRip = br.readLine())!=null)
-      {
-        if(STRip.isEmpty()) { System.exit(0); }
-
-        input = STRip.split(" ");
-        String cmd = input[0];
-
-        switch(cmd)
-        {
-          case "def":
-              hm.put(input[1],Integer.parseInt(input[2]));
-              break;
-
-          case "calc":
-              calc();
-              break;
-
-          case "clear":
-              hm.clear();
-              break;
-        }
-      }
+        br.close();
+        bw.flush();
     }
-    catch(IOException e)
-    {
-        e.printStackTrace();
-    }
-  }
 }
