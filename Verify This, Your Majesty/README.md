@@ -1,1 +1,0 @@
-Question : https://open.kattis.com/problems/queens
