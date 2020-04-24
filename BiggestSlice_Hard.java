@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BiggestSlice{
+public class BiggestSlice_Hard{
 	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 	private static int testCases, n;
