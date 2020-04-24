@@ -1,9 +1,11 @@
+// Problem: https://open.kattis.com/problems/aprizenoonecanwin
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class Rig {
+public class A_Prize_No_One_Can_Win {
     public static void main(String args[]) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

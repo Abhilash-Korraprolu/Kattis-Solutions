@@ -1,9 +1,10 @@
+// Problem: https://www.hackerrank.com/contests/round-1-holiday-cup/challenges/biggest-slice
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Pizza
-{
+public class BiggestSlice{
 	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 	private static int testCases, n;
@@ -12,9 +13,7 @@ public class Pizza
 	private static double[] cutAngles;
 	private static ArrayList<Double> al1, al2, al3;
 
-	///////////////////////////////////////
-	private static void input() throws Exception
-	{
+	private static void input() throws Exception{
 		String[] ARinput = br.readLine().split(" ");
 
 		// Input 2: radius

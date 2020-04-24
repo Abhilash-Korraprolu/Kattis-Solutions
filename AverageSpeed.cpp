@@ -1,3 +1,5 @@
+// Problem: https://open.kattis.com/problems/averagespeed
+
 #include <iostream>
 #include <string>
 #include <iomanip>

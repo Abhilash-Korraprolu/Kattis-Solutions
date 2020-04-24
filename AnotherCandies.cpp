@@ -1,3 +1,7 @@
+// Problem: https://open.kattis.com/problems/anothercandies
+
+// Challenge: Processing very large data
+
 #include <iostream>
 using namespace std;
 

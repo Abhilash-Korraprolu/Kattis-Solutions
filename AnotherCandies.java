@@ -1,8 +1,12 @@
+// Problem: https://open.kattis.com/problems/anothercandies
+
+// Challenge: Processing very large data
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Candy {
+public class AnotherCandies {
 
     public static void main(String args[]) throws IOException {
 

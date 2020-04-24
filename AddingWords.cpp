@@ -1,3 +1,5 @@
+// Problem: https://open.kattis.com/problems/addingwords
+
 #include <iostream>
 #include <string>
 #include <map>

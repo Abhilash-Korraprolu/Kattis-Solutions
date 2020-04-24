@@ -1,3 +1,5 @@
+// Problem: https://open.kattis.com/problems/queens
+
 #include <iostream>
 using namespace std;
 
