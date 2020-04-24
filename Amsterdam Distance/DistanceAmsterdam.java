@@ -1,3 +1,5 @@
+//Problem: https://open.kattis.com/problems/amsterdamdistance
+
 import java.util.Scanner;
 
 public class DistanceAmsterdam {

@@ -1,3 +1,5 @@
+// Problem: https://open.kattis.com/problems/amsterdamdistance
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
